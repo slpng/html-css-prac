@@ -4,6 +4,7 @@
     --primary-color: #d45d79;
     --hamburger-color: white;
     --header-height: 50px;
+    --hamburger-size: calc(0.24 * var(--header-height));
 }
 
 * {
