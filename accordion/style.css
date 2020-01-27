@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+html {
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0; padding: 0;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1024px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block-end: 30px;
+    position: relative;
+}
+
+.add-fact {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.fact-container {
+    z-index: 1;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.fact-header {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.fact-content {
+    opacity: 0;
+    height: 0;
+    width: 80%;
+}
+
+.fa-plus,
+.fa-minus {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.fa-minus {
+    opacity: 0;
+}
+
+.toggler {
+    z-index: 2;
+    position: absolute;
+    width: 100%; 
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.toggler:checked ~ div.fact-header .fa-minus {
+    opacity: 1;
+}
+
+.toggler:checked ~ div.fact-header .fa-plus {
+    opacity: 0;
+}
+
+.toggler:checked ~ div.fact-content {
+    opacity: 1;
+    height: initial;
+}
