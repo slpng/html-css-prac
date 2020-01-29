@@ -2,15 +2,22 @@
 
 :root {
     --primary-color: #d45d79;
+    --secondary-color: #cf4d6c;
     --hamburger-color: white;
     --header-height: 50px;
     --hamburger-size: calc(0.24 * var(--header-height));
+    --header-padding: 50px;
+    --menu-width: 300px;
 }
 
-* {
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
@@ -21,20 +28,14 @@ body {
 .wrapper {
     width: 100%;
     height: 100vh;
-    /* margin: 0 auto; */
 }
 
 header {
     background-color: var(--primary-color);
     height: var(--header-height);
     display: flex;
-    justify-content: space-around;
-}
-
-section {
-    height: calc(100vh - var(--header-height));
-    display: flex;
-    position: relative;
+    justify-content: space-between;
+    padding: 0 var(--header-padding);
 }
 
 .header-logo {
@@ -42,36 +43,5 @@ section {
     font-weight: bold;
     color: white;
     line-height: var(--header-height);
-}
-
-.nav-menu-wrapper {
-    width: 300px;
-    height: calc(100vh - var(--header-height));
-    background-color: var(--primary-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    right: -300px;
-    opacity: 0;
-    transition: all 0.4s ease;
-}
-
-.nav-menu-wrapper-shown {
-    opacity: 1;
-    right: 0;
-}
-
-.nav-menu {
-    list-style: none;
-}
-
-.nav-menu-item {
-    display: flex;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    line-height: 100px;
-    font-size: 20px;
+    cursor: pointer;
 }
